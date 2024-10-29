@@ -35,6 +35,7 @@ func WithHealthListeners(listener ...HealthListener) HealthOption {
 	})
 }
 
+// WithContext allows providing non-default context to be used inside health checks
 func WithContext(ctx context.Context) HealthOption {
 	return healthOptionFunc(func(h *health) {
 		h.ctx = ctx
